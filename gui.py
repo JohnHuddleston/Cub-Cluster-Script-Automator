@@ -231,7 +231,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "NCL Script Automator"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Cub Cluster Script Automator"))
         self.label.setText(_translate("MainWindow", "Select the project:"))
         self.comboBox.setItemText(0, _translate("MainWindow", "None"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Project 1"))
