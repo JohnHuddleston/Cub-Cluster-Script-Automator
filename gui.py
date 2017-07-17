@@ -224,6 +224,14 @@ class Ui_MainWindow(object):
         self.menuFile.addAction(self.actionReset)
         self.menuFile.addAction(self.actionExit)
         self.menubar.addAction(self.menuFile.menuAction())
+        self.menuFile_2 = QtWidgets.QMenu(self.menubar)
+        self.menuFile_2.setObjectName("menuFile_2")
+        self.actionAbout = QtWidgets.QAction(MainWindow)
+        self.actionAbout.setObjectName("actionAbout")
+        self.actionAbout.triggered.connect(self._about)
+        self.actionAbout.setShortcut("Ctrl+A")
+        self.menuFile_2.addAction(self.actionAbout)
+        self.menubar.addAction(self.menuFile_2.menuAction())
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)
@@ -245,6 +253,8 @@ class Ui_MainWindow(object):
         self.menuFile.setTitle(_translate("MainWindow", "File"))
         self.actionReset.setText(_translate("MainWindow", "Reset"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
+        self.menuFile_2.setTitle(_translate("MainWindow", "Info..."))
+        self.actionAbout.setText(_translate("MainWindow", "About"))
         self.param1Label.setText(_translate("MainWindow", "0"))
         self.param2Label.setText(_translate("MainWindow", "0"))
         self.param3Label.setText(_translate("MainWindow", "0"))
@@ -289,6 +299,13 @@ class Ui_MainWindow(object):
         self.horizontalSlider.setValue(0)
         self.horizontalSlider_2.setValue(0)
         self.horizontalSlider_3.setValue(0)
+
+    def _about(self):
+        print("About is run.")
+        self.testBox = QtWidgets.QMessageBox(MainWindow)
+        self.testBox.setWindowTitle("License Information")
+        self.testBox.setText("Cub-Cluster Script Automator\nCopyright (C) 2017  John David Benjamin Huddleston\n\nThis program comes with ABSOLUTELY NO WARRANTY;\nThis is free software, and you are welcome to redis-\ntribute it under certain conditions.")
+        self.testBox.show()
 
 
 if __name__ == "__main__":
