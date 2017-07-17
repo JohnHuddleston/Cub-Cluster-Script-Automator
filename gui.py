@@ -301,7 +301,6 @@ class Ui_MainWindow(object):
         self.horizontalSlider_3.setValue(0)
 
     def _about(self):
-        print("About is run.")
         self.testBox = QtWidgets.QMessageBox(MainWindow)
         self.testBox.setWindowTitle("License Information")
         self.testBox.setText("Cub-Cluster Script Automator\nCopyright (C) 2017  John David Benjamin Huddleston\n\nThis program comes with ABSOLUTELY NO WARRANTY;\nThis is free software, and you are welcome to redis-\ntribute it under certain conditions.")
