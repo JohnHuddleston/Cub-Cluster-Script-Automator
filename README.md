@@ -9,5 +9,5 @@ A GUI solution to allow pre-secondary students to easily manipulate parameters i
 ## Instructions:
 1) 'git clone https://github.com/JohnHuddleston/Cub-Cluster-Script-Automator.git'
 2) 'cd Cub-Cluster-Script-Automator/'
-3) 'chmod +x gui.py'
-4) './gui.py'
+3) 'chmod +x cubscript.py'
+4) './cubscript.py'
