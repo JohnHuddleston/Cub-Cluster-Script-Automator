@@ -34,6 +34,7 @@ class Ui_MainWindow(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.comboBox.addItem("")
+        self.comboBox.addItem("")
         self.comboBox.currentIndexChanged.connect(self._changeStackPage)
 
         #############################################
@@ -60,6 +61,10 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
+        self.page_3 = QtWidgets.QWidget()
+        self.page_3.setObjectName("page_3")
+        self.page_4 = QtWidgets.QWidget()
+        self.page_4.setObjectName("page_4")
         self.label_2 = QtWidgets.QLabel(self.page_2)
         self.label_2.setGeometry(QtCore.QRect(340, 40, 63, 20))
         self.label_2.setObjectName("label_2")
@@ -128,17 +133,17 @@ class Ui_MainWindow(object):
         # Altitude Value
         self.param1Label = QtWidgets.QLabel(self.page_2)
         self.param1Label.setObjectName("parameter1Label")
-        self.param1Label.setGeometry(QtCore.QRect(690, 38, 30, 20))
+        self.param1Label.setGeometry(QtCore.QRect(690, 38, 40, 20))
 
         # Latitude Value
         self.param2Label = QtWidgets.QLabel(self.page_2)
         self.param2Label.setObjectName("parameter3Label")
-        self.param2Label.setGeometry(QtCore.QRect(690, 68, 30, 20))
+        self.param2Label.setGeometry(QtCore.QRect(690, 68, 40, 20))
 
         # Longitude Value
         self.param3Label = QtWidgets.QLabel(self.page_2)
         self.param3Label.setObjectName("parameter3Label")
-        self.param3Label.setGeometry(QtCore.QRect(690, 98, 30, 20))
+        self.param3Label.setGeometry(QtCore.QRect(690, 98, 40, 20))
 
         #############################################
 
@@ -171,9 +176,8 @@ class Ui_MainWindow(object):
 
 
         self.stackedWidget.addWidget(self.page_2)
-        self.page_3 = QtWidgets.QWidget()
-        self.page_3.setObjectName("page_3")
         self.stackedWidget.addWidget(self.page_3)
+        self.stackedWidget.addWidget(self.page_4)
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(True)
@@ -244,6 +248,7 @@ class Ui_MainWindow(object):
         self.comboBox.setItemText(0, _translate("MainWindow", "None"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Project 1"))
         self.comboBox.setItemText(2, _translate("MainWindow", "Project 2"))
+        self.comboBox.setItemText(3, _translate("MainWindow", "Project 3"))
         self.label_5.setText(_translate("MainWindow", "(NO PROJECT SELECTED)"))
         self.label_2.setText(_translate("MainWindow", "Altitude"))
         self.label_3.setText(_translate("MainWindow", "Latitude"))
@@ -273,6 +278,8 @@ class Ui_MainWindow(object):
             self.statusbar.showMessage("Running script...")
             time.sleep(5)
             self.statusbar.showMessage("Script finished.")
+        elif self.comboBox.currentIndex() == 2:
+            pass
         else:
             print("THIS PROJECT NOT YET IMPLEMENTED")
             self.statusbar.showMessage("Error: Invalid Project Selected")
@@ -286,12 +293,7 @@ class Ui_MainWindow(object):
         self.param3Label.setText(str(self.horizontalSlider_3.value()))
 
     def _changeStackPage(self):
-        if self.comboBox.currentIndex() == 0:
-            self.stackedWidget.setCurrentIndex(0)
-        elif self.comboBox.currentIndex() == 1:
-            self.stackedWidget.setCurrentIndex(1)
-        else:
-            self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(self.comboBox.currentIndex())
 
     def _reset(self):
         self.comboBox.setCurrentIndex(0)
