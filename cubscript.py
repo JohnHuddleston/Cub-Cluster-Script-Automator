@@ -161,12 +161,12 @@ class Ui_MainWindow(object):
         self.proj1Title = QtWidgets.QLabel(self.page_2)
         self.proj1Title.setFont(font)
         self.proj1Title.setObjectName("proj1Title")
-        self.proj1Title.setGeometry(QtCore.QRect(55,10,140,30))
+        self.proj1Title.setGeometry(QtCore.QRect(45,10,140,30))
 
         # Description
         self.proj1Desc = QtWidgets.QLabel(self.page_2)
         self.proj1Desc.setObjectName("proj1Desc")
-        self.proj1Desc.setGeometry(QtCore.QRect(55,10,250,150))
+        self.proj1Desc.setGeometry(QtCore.QRect(45,15,300,150))
 
 
 
