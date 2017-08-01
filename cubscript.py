@@ -1,4 +1,4 @@
-#!/usr/bin/python3.5
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # Form implementation generated from reading ui file 'firstDraftGUI.ui'
