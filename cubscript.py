@@ -133,7 +133,7 @@ class Ui_MainWindow(object):
         # Altitude Value
         self.param1Label = QtWidgets.QLabel(self.page_2)
         self.param1Label.setObjectName("parameter1Label")
-        self.param1Label.setGeometry(QtCore.QRect(690, 38, 40, 20))
+        self.param1Label.setGeometry(QtCore.QRect(690, 38, 60, 20))
 
         # Latitude Value
         self.param2Label = QtWidgets.QLabel(self.page_2)
@@ -260,9 +260,9 @@ class Ui_MainWindow(object):
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.menuFile_2.setTitle(_translate("MainWindow", "Info..."))
         self.actionAbout.setText(_translate("MainWindow", "About"))
-        self.param1Label.setText(_translate("MainWindow", "0"))
-        self.param2Label.setText(_translate("MainWindow", "0"))
-        self.param3Label.setText(_translate("MainWindow", "0"))
+        self.param1Label.setText(_translate("MainWindow", "0m"))
+        self.param2Label.setText(_translate("MainWindow", "0°"))
+        self.param3Label.setText(_translate("MainWindow", "0°"))
         self.proj1Title.setText(_translate("MainWindow", "Project 1"))
         self.proj1Desc.setText(_translate("MainWindow", "This is where we can include a basic over- \nview of the project, and descriptions of \nthe variables involved.  As it stands this \nformatting is done manually, I may add in \na way to automatically wrap and for-\nmat the text."))
 
@@ -286,11 +286,11 @@ class Ui_MainWindow(object):
 
     def _updateParams(self):
         self.param1 = self.horizontalSlider.value()
-        self.param1Label.setText(str(self.horizontalSlider.value()))
+        self.param1Label.setText(str(self.horizontalSlider.value())+" m")
         self.param2 = self.horizontalSlider_2.value()
-        self.param2Label.setText(str(self.horizontalSlider_2.value()))
+        self.param2Label.setText(str(self.horizontalSlider_2.value())+"°")
         self.param3 = self.horizontalSlider_3.value()
-        self.param3Label.setText(str(self.horizontalSlider_3.value()))
+        self.param3Label.setText(str(self.horizontalSlider_3.value())+"°")
 
     def _changeStackPage(self):
         self.stackedWidget.setCurrentIndex(self.comboBox.currentIndex())
